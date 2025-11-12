@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brew & Bites | Modern Cafe</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -518,6 +518,99 @@ body {
 .container {
     min-width: 1024px;
 }
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+    /* Maintain desktop layout but with better spacing */
+    .categories,
+    .products {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+        gap: 1.5rem !important;
+    }
+    
+    /* Larger touch targets */
+    .btn, .product-card, .category-card {
+        min-height: 44px !important;
+    }
+    
+    .btn {
+        padding: 1rem 1.5rem !important;
+        font-size: 1rem !important;
+    }
+    
+    /* Better text readability */
+    body {
+        font-size: 16px !important;
+    }
+    
+    /* Improved spacing */
+    .container {
+        padding: 1.5rem !important;
+    }
+    
+    /* Hide desktop nav on mobile */
+    .nav-links {
+        display: none !important;
+    }
+}
+
+/* Bottom mobile navigation bar */
+.mobile-bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-top: 1px solid rgba(139, 69, 19, 0.1);
+    padding: 0.5rem;
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.mobile-nav-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text);
+    padding: 0.5rem;
+    border-radius: 10px;
+    transition: var(--transition);
+    flex: 1;
+    max-width: 80px;
+}
+
+.mobile-nav-item.active {
+    color: var(--primary);
+    background: rgba(139, 69, 19, 0.1);
+}
+
+.mobile-nav-icon {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.mobile-nav-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .mobile-bottom-nav {
+        display: block;
+    }
+    
+    /* Add padding to prevent content from being hidden behind nav */
+    body {
+        padding-bottom: 70px;
+    }
+}
     </style>
 </head>
 <body>
@@ -758,5 +851,27 @@ body {
             document.querySelector('.cart-count').textContent = cart.length;
         });
     </script>
+
+    <!-- Mobile Bottom Navigation -->
+<div class="mobile-bottom-nav">
+    <div class="mobile-nav-items">
+        <a href="index.html" class="mobile-nav-item active">
+            <i class="fas fa-home mobile-nav-icon"></i>
+            <span class="mobile-nav-label">Menu</span>
+        </a>
+        <a href="coffee-categories.html" class="mobile-nav-item">
+            <i class="fas fa-coffee mobile-nav-icon"></i>
+            <span class="mobile-nav-label">Coffee</span>
+        </a>
+        <a href="orders.html" class="mobile-nav-item">
+            <i class="fas fa-shopping-bag mobile-nav-icon"></i>
+            <span class="mobile-nav-label">Cart</span>
+        </a>
+        <a href="#" class="mobile-nav-item">
+            <i class="fas fa-user mobile-nav-icon"></i>
+            <span class="mobile-nav-label">Account</span>
+        </a>
+    </div>
+</div>
 </body>
 </html>
