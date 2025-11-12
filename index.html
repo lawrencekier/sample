@@ -87,8 +87,7 @@
             font-size: 0.7rem;
             font-weight: 600;
         }
-        
-        /* Hero Section - Full Screen Height with Animations */
+       
        /* Hero Section - Full Screen Height with Animations */
 .hero {
     background: linear-gradient(rgba(62, 39, 35, 0.7), rgba(62, 39, 35, 0.7)), 
@@ -180,32 +179,32 @@
 
         /* Scroll down indicator */
         .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--light);
-            font-size: 1.5rem;
-            animation: bounce 2s infinite;
-            opacity: 0;
-            transition: opacity 0.5s ease 1s;
-        }
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--light);
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+    opacity: 0;
+    transition: opacity 0.5s ease 1s;
+}
 
-        .hero.animate .scroll-indicator {
-            opacity: 1;
-        }
+.hero.animate .scroll-indicator {
+    opacity: 1;
+}
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            40% {
-                transform: translateX(-50%) translateY(-10px);
-            }
-            60% {
-                transform: translateX(-50%) translateY(-5px);
-            }
-        }
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
         
         .btn {
             background: linear-gradient(135deg, var(--secondary), var(--accent));
@@ -695,45 +694,55 @@
         }
         
         /* Desktop View */
-        @media (min-width: 1024px) {
-            .categories {
-                grid-template-columns: repeat(4, 1fr);
-            }
-            
-            .category-image {
-                height: 160px;
-            }
-            
-            .category-info h2 {
-                font-size: 1.2rem;
-            }
-            
-            .category-info p {
-                display: block;
-            }
-            
-            .container {
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-            
-            .nav-links {
-                display: flex;
-                gap: 2rem;
-            }
-            
-            .mobile-bottom-nav {
-                display: none;
-            }
-            
-            .coffee-popup {
-                display: none !important;
-            }
-            
-            body {
-                padding-bottom: 0;
-            }
-        }
+       @media (min-width: 1024px) {
+    .nav-links {
+        display: flex !important;
+        gap: 2rem;
+    }
+    
+    .nav-links a {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+        position: relative;
+        padding: 0.5rem 0;
+    }
+    
+    .nav-links a:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--secondary);
+        transition: var(--transition);
+    }
+    
+    .nav-links a:hover, .nav-links a.active {
+        color: var(--primary);
+    }
+    
+    .nav-links a:hover:after, .nav-links a.active:after {
+        width: 100%;
+    }
+    
+    .mobile-bottom-nav {
+        display: none;
+    }
+    
+    body {
+        padding-bottom: 0;
+    }
+    
+    /* Fix container for desktop */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem 4rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -758,18 +767,21 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <h1>Artisanal Coffee & Handcrafted Cakes</h1>
-        <p>Experience the perfect blend of rich flavors and cozy ambiance at our modern cafe</p>
-        <div class="hero-actions">
-            <button class="btn" onclick="window.location.href='#coffees'">
-                <i class="fas fa-coffee"></i> Explore Coffees
-            </button>
-            <button class="btn btn-outline" onclick="window.location.href='#cakes'">
-                <i class="fas fa-birthday-cake"></i> Discover Cakes
-            </button>
-        </div>
-    </section>
+<section class="hero" id="hero">
+    <h1>Artisanal Coffee & Handcrafted Cakes</h1>
+    <p>Experience the perfect blend of rich flavors and cozy ambiance at our modern cafe</p>
+    <div class="hero-actions">
+        <button class="btn" onclick="window.location.href='#coffees'">
+            <i class="fas fa-coffee"></i> Explore Coffees
+        </button>
+        <button class="btn btn-outline" onclick="window.location.href='#cakes'">
+            <i class="fas fa-birthday-cake"></i> Discover Cakes
+        </button>
+    </div>
+    <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</section>
 
     <!-- Main Content -->
     <div class="container">
@@ -1048,21 +1060,18 @@ window.addEventListener('scroll', function() {
 
 
 
-// Scroll animation for all sections - fixed to work every time
+// Scroll animation for all sections - improved version
 function checkScroll() {
     const sections = document.querySelectorAll('.menu-section, .features');
     const sectionHeaders = document.querySelectorAll('.section-header');
     const windowHeight = window.innerHeight;
-    const triggerBottom = windowHeight * 0.8;
+    const triggerBottom = windowHeight * 0.85;
 
     sections.forEach(section => {
         const sectionTop = section.getBoundingClientRect().top;
         
         if (sectionTop < triggerBottom) {
             section.classList.add('animate');
-        } else {
-            // Remove animate class when section goes out of view
-            section.classList.remove('animate');
         }
     });
 
@@ -1071,9 +1080,6 @@ function checkScroll() {
         
         if (headerTop < triggerBottom) {
             header.classList.add('animate');
-        } else {
-            // Remove animate class when header goes out of view
-            header.classList.remove('animate');
         }
     });
 }
@@ -1093,12 +1099,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.cart-count').textContent = cart.length;
 });
 
-// Check scroll on scroll event - use throttling for performance
-let scrollTimeout;
-window.addEventListener('scroll', function() {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(checkScroll, 10);
-});
+// Check scroll on scroll event
+window.addEventListener('scroll', checkScroll);
 
 // Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
