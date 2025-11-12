@@ -893,6 +893,13 @@
                 flex-wrap: wrap;
             }
         }
+        
+        /* Hide desktop content on mobile */
+        @media (max-width: 1023px) {
+            .desktop-container {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1161,7 +1168,6 @@
             </div>
         </div>
     </div>
-    </div>
 
     <!-- Desktop Content with Sidebar -->
     <div class="desktop-container">
@@ -1264,170 +1270,185 @@
                 </div>
             </div>
             
-            <!-- Other desktop categories would go here -->
-             <!-- Espresso Classics -->
-        <div class="category-content" id="espresso">
-            <div class="products">
-                <div class="product-card" data-product="espresso">
-                    <div class="product-image espresso">
-                        <span class="product-badge">Strong</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Espresso</h3>
-                        <p>A concentrated shot of our finest coffee beans</p>
-                        <div class="product-price">
-                            <span class="price">$3.00</span>
-                            <button class="btn">View Details</button>
+            <!-- Espresso Classics -->
+            <div class="category-content" id="desktop-espresso">
+                <div class="content-header">
+                    <h1>Espresso Classics</h1>
+                    <p class="category-description">Traditional espresso-based drinks crafted with our signature blend of beans, roasted to perfection for rich flavor and aromatic complexity.</p>
+                </div>
+                <div class="products">
+                    <div class="product-card" data-product="espresso">
+                        <div class="product-image espresso">
+                            <span class="product-badge">Strong</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Espresso</h3>
+                            <p>A concentrated shot of our finest coffee beans, expertly extracted to highlight complex flavors.</p>
+                            <div class="product-price">
+                                <span class="price">$3.00</span>
+                                <button class="btn">View Details</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="product-card" data-product="cappuccino">
-                    <div class="product-image cappuccino">
-                        <span class="product-badge">Classic</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Cappuccino</h3>
-                        <p>Espresso with steamed milk and thick foam</p>
-                        <div class="product-price">
-                            <span class="price">$4.25</span>
-                            <button class="btn">View Details</button>
+                    
+                    <div class="product-card" data-product="cappuccino">
+                        <div class="product-image cappuccino">
+                            <span class="product-badge">Classic</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Cappuccino</h3>
+                            <p>Espresso with steamed milk and thick foam, a perfect balance of strong coffee and creamy texture.</p>
+                            <div class="product-price">
+                                <span class="price">$4.25</span>
+                                <button class="btn">View Details</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="product-card" data-product="latte">
-                    <div class="product-image latte">
-                        <span class="product-badge">Creamy</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Latte</h3>
-                        <p>Smooth espresso with steamed milk</p>
-                        <div class="product-price">
-                            <span class="price">$4.50</span>
-                            <button class="btn">View Details</button>
+                    
+                    <div class="product-card" data-product="latte">
+                        <div class="product-image latte">
+                            <span class="product-badge">Creamy</span>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Cold Brew -->
-        <div class="category-content" id="coldbrew">
-            <div class="products">
-                <div class="product-card" data-product="cold-brew">
-                    <div class="product-image cold-brew">
-                        <span class="product-badge">Smooth</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Classic Cold Brew</h3>
-                        <p>Steeped for 18 hours for smooth, low-acidity flavor</p>
-                        <div class="product-price">
-                            <span class="price">$4.75</span>
-                            <button class="btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product-card" data-product="nitro-brew">
-                    <div class="product-image nitro-brew">
-                        <span class="product-badge">Cascading</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Nitro Cold Brew</h3>
-                        <p>Infused with nitrogen for creamy texture</p>
-                        <div class="product-price">
-                            <span class="price">$5.50</span>
-                            <button class="btn">View Details</button>
+                        <div class="product-info">
+                            <h3>Latte</h3>
+                            <p>Smooth espresso combined with velvety steamed milk and a light layer of foam.</p>
+                            <div class="product-price">
+                                <span class="price">$4.50</span>
+                                <button class="btn">View Details</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Seasonal Specials -->
-        <div class="category-content" id="seasonal">
-            <div class="products">
-                <div class="product-card" data-product="pumpkin-spice">
-                    <div class="product-image matcha-latte">
-                        <span class="product-badge">Seasonal</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Pumpkin Spice Latte</h3>
-                        <p>Seasonal favorite with pumpkin and spices</p>
-                        <div class="product-price">
-                            <span class="price">$5.25</span>
-                            <button class="btn">View Details</button>
+            
+            <!-- Cold Brew -->
+            <div class="category-content" id="desktop-coldbrew">
+                <div class="content-header">
+                    <h1>Cold Brew</h1>
+                    <p class="category-description">Smooth, refreshing cold brew coffee steeped for hours to extract maximum flavor with minimal acidity.</p>
+                </div>
+                <div class="products">
+                    <div class="product-card" data-product="cold-brew">
+                        <div class="product-image cold-brew">
+                            <span class="product-badge">Smooth</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Classic Cold Brew</h3>
+                            <p>Our signature cold brew steeped for 18 hours to extract maximum flavor with minimal acidity.</p>
+                            <div class="product-price">
+                                <span class="price">$4.75</span>
+                                <button class="btn">View Details</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="product-card" data-product="peppermint-mocha">
-                    <div class="product-image matcha-frappuccino">
-                        <span class="product-badge">Holiday</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Peppermint Mocha</h3>
-                        <p>Rich chocolate with refreshing peppermint</p>
-                        <div class="product-price">
-                            <span class="price">$5.50</span>
-                            <button class="btn">View Details</button>
+                    
+                    <div class="product-card" data-product="nitro-brew">
+                        <div class="product-image nitro-brew">
+                            <span class="product-badge">Cascading</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Nitro Cold Brew</h3>
+                            <p>Infused with nitrogen for a creamy, Guinness-like texture and cascading visual effect.</p>
+                            <div class="product-price">
+                                <span class="price">$5.50</span>
+                                <button class="btn">View Details</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Hot Brewed -->
-        <div class="category-content" id="hotbrew">
-            <div class="products">
-                <div class="product-card" data-product="pour-over">
-                    <div class="product-image espresso">
-                        <span class="product-badge">Artisan</span>
+            
+            <!-- Seasonal Specials -->
+            <div class="category-content" id="desktop-seasonal">
+                <div class="content-header">
+                    <h1>Seasonal Specials</h1>
+                    <p class="category-description">Limited-time offerings that celebrate the flavors of the season, available for a short time only.</p>
+                </div>
+                <div class="products">
+                    <div class="product-card" data-product="pumpkin-spice">
+                        <div class="product-image matcha-latte">
+                            <span class="product-badge">Seasonal</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Pumpkin Spice Latte</h3>
+                            <p>Seasonal favorite featuring real pumpkin, warm spices, and espresso topped with whipped cream.</p>
+                            <div class="product-price">
+                                <span class="price">$5.25</span>
+                                <button class="btn">View Details</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <h3>Pour Over</h3>
-                        <p>Handcrafted single-origin coffee</p>
-                        <div class="product-price">
-                            <span class="price">$4.25</span>
-                            <button class="btn">View Details</button>
+                    
+                    <div class="product-card" data-product="peppermint-mocha">
+                        <div class="product-image matcha-frappuccino">
+                            <span class="product-badge">Holiday</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Peppermint Mocha</h3>
+                            <p>A holiday classic combining rich chocolate, refreshing peppermint, and our signature espresso.</p>
+                            <div class="product-price">
+                                <span class="price">$5.50</span>
+                                <button class="btn">View Details</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="product-card" data-product="french-press">
-                    <div class="product-image cappuccino">
-                        <span class="product-badge">Rich</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>French Press</h3>
-                        <p>Full-bodied coffee with rich oils</p>
-                        <div class="product-price">
-                            <span class="price">$4.75</span>
-                            <button class="btn">View Details</button>
+            </div>
+            
+            <!-- Hot Brewed -->
+            <div class="category-content" id="desktop-hotbrew">
+                <div class="content-header">
+                    <h1>Hot Brewed</h1>
+                    <p class="category-description">Traditional brewing methods that highlight the unique characteristics of our single-origin and blended coffees.</p>
+                </div>
+                <div class="products">
+                    <div class="product-card" data-product="pour-over">
+                        <div class="product-image espresso">
+                            <span class="product-badge">Artisan</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Pour Over</h3>
+                            <p>Handcrafted single-origin coffee brewed to order for maximum flavor extraction and clarity.</p>
+                            <div class="product-price">
+                                <span class="price">$4.25</span>
+                                <button class="btn">View Details</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="product-card" data-product="americano">
-                    <div class="product-image latte">
-                        <span class="product-badge">Bold</span>
+                    
+                    <div class="product-card" data-product="french-press">
+                        <div class="product-image cappuccino">
+                            <span class="product-badge">Rich</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>French Press</h3>
+                            <p>Full-bodied coffee with rich oils and deep flavor profile, brewed in small batches.</p>
+                            <div class="product-price">
+                                <span class="price">$4.75</span>
+                                <button class="btn">View Details</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <h3>Americano</h3>
-                        <p>Espresso with hot water for a smooth drink</p>
-                        <div class="product-price">
-                            <span class="price">$3.75</span>
-                            <button class="btn">View Details</button>
+                    
+                    <div class="product-card" data-product="americano">
+                        <div class="product-image latte">
+                            <span class="product-badge">Bold</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Americano</h3>
+                            <p>Smooth espresso diluted with hot water for a rich, full-flavored coffee drink.</p>
+                            <div class="product-price">
+                                <span class="price">$3.75</span>
+                                <button class="btn">View Details</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-        </div>
-    </div>
- <!-- Footer -->
+
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-column">
@@ -1608,6 +1629,8 @@
         const categoryNavItems = document.querySelectorAll('.category-nav-item');
         const categoryContents = document.querySelectorAll('.category-content');
         const pageHeader = document.getElementById('pageHeader');
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const desktopCategoryContents = document.querySelectorAll('.content .category-content');
 
         // Current product and quantity
         let currentProduct = null;
@@ -1629,6 +1652,9 @@
             
             // Set up product card click events
             setupProductCards();
+            
+            // Set up sidebar navigation
+            setupSidebarNavigation();
         });
 
         // Category navigation functionality
@@ -1646,6 +1672,30 @@
                     categoryContents.forEach(content => {
                         content.classList.remove('active');
                         if (content.id === category) {
+                            content.classList.add('active');
+                        }
+                    });
+                });
+            });
+        }
+
+        // Sidebar navigation functionality
+        function setupSidebarNavigation() {
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get the category from data attribute
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update active state in sidebar
+                    sidebarLinks.forEach(sidebarLink => sidebarLink.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show the corresponding category content
+                    desktopCategoryContents.forEach(content => {
+                        content.classList.remove('active');
+                        if (content.id === `desktop-${category}`) {
                             content.classList.add('active');
                         }
                     });
