@@ -618,42 +618,99 @@
     transform: translateX(-5px);
 }
 
-/* Disable mobile responsiveness */
+/* Mobile-first responsive design */
 @media (max-width: 768px) {
+    /* Reset any zoom/scale */
+    body {
+        zoom: 1;
+        -moz-transform: none;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    
+    /* Mobile-optimized container */
+    .container {
+        width: 100%;
+        max-width: 100%;
+        min-width: auto;
+        padding: 1rem;
+    }
+    
+    /* Maintain grid layout but mobile-optimized */
     .categories,
     .products {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-        gap: 2rem !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
     }
     
-    .container {
-        padding: 2rem !important;
-        max-width: 1200px !important;
+    /* Larger touch targets */
+    .category-card,
+    .product-card {
+        min-height: 160px !important;
+        border-radius: 12px !important;
     }
     
-    .nav-links {
+    /* Larger buttons */
+    .btn {
+        padding: 1rem 1.5rem !important;
+        font-size: 1rem !important;
+        min-height: 50px !important;
         display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
     
-    .main-container {
-        flex-direction: row !important;
+    /* Larger bottom navigation */
+    .mobile-bottom-nav {
+        height: 70px;
+        padding: 0.5rem;
     }
     
-    .sidebar {
-        width: 280px !important;
-        height: calc(100vh - 80px) !important;
-        position: sticky !important;
-        top: 80px !important;
+    .mobile-nav-item {
+        padding: 0.5rem;
+        min-height: 50px;
+    }
+    
+    .mobile-nav-icon {
+        font-size: 1.4rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .mobile-nav-label {
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    
+    /* Better text sizing */
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    h2 {
+        font-size: 1.4rem !important;
+    }
+    
+    /* Hide desktop elements */
+    .nav-links {
+        display: none !important;
+    }
+    
+    .back-button-container {
+        padding: 1rem !important;
     }
 }
 
-/* Force desktop layout on all screens */
-body {
-    min-width: 1024px;
-}
-
-.container {
-    min-width: 1024px;
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .categories,
+    .products {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
 }
     </style>
 </head>
@@ -1000,5 +1057,6 @@ body {
         // Load cart when page loads
         document.addEventListener('DOMContentLoaded', loadCart);
     </script>
+    
 </body>
 </html>
