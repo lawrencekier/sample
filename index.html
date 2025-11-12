@@ -456,41 +456,44 @@
             font-weight: 500;
         }
         
-        /* Coffee Popup Menu - Modal Style */
+       /* Coffee Popup Menu - Modal Style */
 .coffee-popup {
     display: none;
     position: fixed;
     bottom: 70px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 20px;
     background: var(--white);
     border-radius: 16px;
     padding: 1rem;
     z-index: 999;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    width: 90%;
-    max-width: 300px;
+    width: 140px;
     height: auto;
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.coffee-popup.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 .coffee-popup-content {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .coffee-popup-item {
     display: flex;
-    flex-direction: column;
     align-items: center;
     text-decoration: none;
     color: var(--text);
-    padding: 1rem;
-    border-radius: 12px;
+    padding: 0.8rem;
+    border-radius: 10px;
     transition: var(--transition);
-    flex: 1;
-    margin: 0 0.5rem;
+    gap: 10px;
 }
 
 .coffee-popup-item:active {
@@ -498,9 +501,9 @@
 }
 
 .coffee-popup-icon {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
     color: var(--primary);
+    width: 20px;
 }
 
 .coffee-popup-label {
@@ -852,27 +855,37 @@
         });
 
         // Coffee popup functions
-        function toggleCoffeePopup(event) {
-            event.preventDefault();
-            const popup = document.getElementById('coffeePopup');
-            if (popup.style.display === 'flex') {
-                popup.style.display = 'none';
-            } else {
-                popup.style.display = 'flex';
-            }
-        }
+function toggleCoffeePopup(event) {
+    event.preventDefault();
+    const popup = document.getElementById('coffeePopup');
+    if (popup.classList.contains('show')) {
+        popup.classList.remove('show');
+        setTimeout(() => {
+            popup.style.display = 'none';
+        }, 300);
+    } else {
+        popup.style.display = 'block';
+        setTimeout(() => {
+            popup.classList.add('show');
+        }, 10);
+    }
+}
 
-        function hideCoffeePopup() {
-            document.getElementById('coffeePopup').style.display = 'none';
-        }
+function hideCoffeePopup() {
+    const popup = document.getElementById('coffeePopup');
+    popup.classList.remove('show');
+    setTimeout(() => {
+        popup.style.display = 'none';
+    }, 300);
+}
 
-        // Close popup when clicking outside
+// Close popup when clicking outside
 document.addEventListener('click', function(event) {
     const popup = document.getElementById('coffeePopup');
     const coffeeButton = document.querySelector('.mobile-nav-item:nth-child(2)');
     
     if (!popup.contains(event.target) && event.target !== coffeeButton && !coffeeButton.contains(event.target)) {
-        popup.style.display = 'none';
+        hideCoffeePopup();
     }
 });
     </script>
