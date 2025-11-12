@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Menu - Brew & Bites</title>
+    <title>Cake Menu - Brew & Bites</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -252,36 +252,36 @@
             z-index: 2;
         }
         
-        .matcha-latte {
-            background-image: url('https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        .chocolate-cake {
+            background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
         }
         
-        .matcha-frappuccino {
-            background-image: url('https://images.unsplash.com/photo-1574263867128-a3d5c1b1deae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        .red-velvet {
+            background-image: url('https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
         }
         
-        .iced-matcha {
-            background-image: url('https://images.unsplash.com/photo-1627746366447-3628afad6285?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        .cheesecake {
+            background-image: url('https://images.unsplash.com/photo-1524351199678-941a58a3df50?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
         }
         
-        .espresso {
-            background-image: url('https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        .carrot-cake {
+            background-image: url('https://images.unsplash.com/photo-1596223505561-9b7f0a6b6c8a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
         }
         
-        .cappuccino {
-            background-image: url('https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        .tiramisu {
+            background-image: url('https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
         }
         
-        .latte {
-            background-image: url('https://images.unsplash.com/photo-1561047029-3000c68339ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        .fruit-tart {
+            background-image: url('https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
         }
         
-        .cold-brew {
-            background-image: url('https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        .macarons {
+            background-image: url('https://images.unsplash.com/photo-1558326567-98ae2405596b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
         }
         
-        .nitro-brew {
-            background-image: url('https://images.unsplash.com/photo-1517701604599-bb29b565090c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        .eclairs {
+            background-image: url('https://images.unsplash.com/photo-1623334044303-241021148842?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
         }
         
         .product-info {
@@ -893,6 +893,13 @@
                 flex-wrap: wrap;
             }
         }
+        
+        /* Hide desktop content on mobile */
+        @media (max-width: 1023px) {
+            .desktop-container {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -926,154 +933,107 @@
     <!-- Mobile Content -->
     <div class="container">
         <div class="page-header" id="pageHeader">
-            <h1 class="page-title">Coffee Menu</h1>
-            <p class="page-subtitle">Explore our premium coffee selection</p>
+            <h1 class="page-title">Cake Menu</h1>
+            <p class="page-subtitle">Explore our delicious cake selection</p>
         </div>
         
         <!-- Category Navigation - Mobile -->
         <div class="category-nav">
-            <div class="category-nav-item active" data-category="matcha">
-                <i class="fas fa-leaf category-icon"></i>
-                <span>Matcha Series</span>
+            <div class="category-nav-item active" data-category="classic">
+                <i class="fas fa-birthday-cake category-icon"></i>
+                <span>Classic Cakes</span>
             </div>
-            <div class="category-nav-item" data-category="espresso">
-                <i class="fas fa-coffee category-icon"></i>
-                <span>Espresso Classics</span>
+            <div class="category-nav-item" data-category="cheesecakes">
+                <i class="fas fa-cheese category-icon"></i>
+                <span>Cheesecakes</span>
             </div>
-            <div class="category-nav-item" data-category="coldbrew">
-                <i class="fas fa-snowflake category-icon"></i>
-                <span>Cold Brew</span>
+            <div class="category-nav-item" data-category="specialty">
+                <i class="fas fa-star category-icon"></i>
+                <span>Specialty Cakes</span>
+            </div>
+            <div class="category-nav-item" data-category="pastries">
+                <i class="fas fa-cookie-bite category-icon"></i>
+                <span>Pastries</span>
             </div>
             <div class="category-nav-item" data-category="seasonal">
                 <i class="fas fa-calendar-alt category-icon"></i>
-                <span>Seasonal Specials</span>
-            </div>
-            <div class="category-nav-item" data-category="hotbrew">
-                <i class="fas fa-fire category-icon"></i>
-                <span>Hot Brewed</span>
+                <span>Seasonal</span>
             </div>
         </div>
         
         <!-- Category Content - Mobile -->
-        <div class="category-content active" id="matcha">
+        <div class="category-content active" id="classic">
             <div class="products">
-                <div class="product-card" data-product="matcha-latte">
-                    <div class="product-image matcha-latte">
+                <div class="product-card" data-product="chocolate-cake">
+                    <div class="product-image chocolate-cake">
                         <span class="product-badge">Popular</span>
                     </div>
                     <div class="product-info">
-                        <h3>Matcha Latte</h3>
-                        <p>Ceremonial matcha whisked with steamed milk</p>
+                        <h3>Chocolate Fudge</h3>
+                        <p>Rich chocolate cake with fudge frosting</p>
                         <div class="product-price">
-                            <span class="price">$4.50</span>
+                            <span class="price">$28.00</span>
                             <button class="btn">View Details</button>
                         </div>
                     </div>
                 </div>
                 
-                <div class="product-card" data-product="matcha-frappuccino">
-                    <div class="product-image matcha-frappuccino">
-                        <span class="product-badge">New</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Matcha Frappuccino</h3>
-                        <p>Blended matcha with ice and whipped cream</p>
-                        <div class="product-price">
-                            <span class="price">$5.25</span>
-                            <button class="btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product-card" data-product="iced-matcha">
-                    <div class="product-image iced-matcha">
-                        <span class="product-badge">Refreshing</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Iced Matcha</h3>
-                        <p>Chilled matcha over ice, lightly sweetened</p>
-                        <div class="product-price">
-                            <span class="price">$4.00</span>
-                            <button class="btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Espresso Classics -->
-        <div class="category-content" id="espresso">
-            <div class="products">
-                <div class="product-card" data-product="espresso">
-                    <div class="product-image espresso">
-                        <span class="product-badge">Strong</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Espresso</h3>
-                        <p>A concentrated shot of our finest coffee beans</p>
-                        <div class="product-price">
-                            <span class="price">$3.00</span>
-                            <button class="btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product-card" data-product="cappuccino">
-                    <div class="product-image cappuccino">
+                <div class="product-card" data-product="red-velvet">
+                    <div class="product-image red-velvet">
                         <span class="product-badge">Classic</span>
                     </div>
                     <div class="product-info">
-                        <h3>Cappuccino</h3>
-                        <p>Espresso with steamed milk and thick foam</p>
+                        <h3>Red Velvet</h3>
+                        <p>Velvety red cake with cream cheese frosting</p>
                         <div class="product-price">
-                            <span class="price">$4.25</span>
+                            <span class="price">$32.00</span>
                             <button class="btn">View Details</button>
                         </div>
                     </div>
                 </div>
                 
-                <div class="product-card" data-product="latte">
-                    <div class="product-image latte">
+                <div class="product-card" data-product="carrot-cake">
+                    <div class="product-image carrot-cake">
+                        <span class="product-badge">Healthy</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Carrot Cake</h3>
+                        <p>Spiced carrot cake with cream cheese frosting</p>
+                        <div class="product-price">
+                            <span class="price">$26.00</span>
+                            <button class="btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cheesecakes -->
+        <div class="category-content" id="cheesecakes">
+            <div class="products">
+                <div class="product-card" data-product="cheesecake">
+                    <div class="product-image cheesecake">
                         <span class="product-badge">Creamy</span>
                     </div>
                     <div class="product-info">
-                        <h3>Latte</h3>
-                        <p>Smooth espresso with steamed milk</p>
+                        <h3>New York Cheesecake</h3>
+                        <p>Classic creamy cheesecake with graham crust</p>
                         <div class="product-price">
-                            <span class="price">$4.50</span>
-                            <button class="btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Cold Brew -->
-        <div class="category-content" id="coldbrew">
-            <div class="products">
-                <div class="product-card" data-product="cold-brew">
-                    <div class="product-image cold-brew">
-                        <span class="product-badge">Smooth</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Classic Cold Brew</h3>
-                        <p>Steeped for 18 hours for smooth, low-acidity flavor</p>
-                        <div class="product-price">
-                            <span class="price">$4.75</span>
+                            <span class="price">$30.00</span>
                             <button class="btn">View Details</button>
                         </div>
                     </div>
                 </div>
                 
-                <div class="product-card" data-product="nitro-brew">
-                    <div class="product-image nitro-brew">
-                        <span class="product-badge">Cascading</span>
+                <div class="product-card" data-product="berry-cheesecake">
+                    <div class="product-image red-velvet">
+                        <span class="product-badge">Fruity</span>
                     </div>
                     <div class="product-info">
-                        <h3>Nitro Cold Brew</h3>
-                        <p>Infused with nitrogen for creamy texture</p>
+                        <h3>Berry Cheesecake</h3>
+                        <p>Creamy cheesecake with mixed berry topping</p>
                         <div class="product-price">
-                            <span class="price">$5.50</span>
+                            <span class="price">$34.00</span>
                             <button class="btn">View Details</button>
                         </div>
                     </div>
@@ -1081,86 +1041,104 @@
             </div>
         </div>
         
-        <!-- Seasonal Specials -->
+        <!-- Specialty Cakes -->
+        <div class="category-content" id="specialty">
+            <div class="products">
+                <div class="product-card" data-product="tiramisu">
+                    <div class="product-image tiramisu">
+                        <span class="product-badge">Italian</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tiramisu</h3>
+                        <p>Layers of coffee-soaked ladyfingers and mascarpone</p>
+                        <div class="product-price">
+                            <span class="price">$26.00</span>
+                            <button class="btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-product="fruit-tart">
+                    <div class="product-image fruit-tart">
+                        <span class="product-badge">Fresh</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Fresh Fruit Tart</h3>
+                        <p>Buttery crust with pastry cream and fresh fruits</p>
+                        <div class="product-price">
+                            <span class="price">$24.00</span>
+                            <button class="btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pastries -->
+        <div class="category-content" id="pastries">
+            <div class="products">
+                <div class="product-card" data-product="macarons">
+                    <div class="product-image macarons">
+                        <span class="product-badge">French</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Macarons (6 pcs)</h3>
+                        <p>Delicate French macarons in assorted flavors</p>
+                        <div class="product-price">
+                            <span class="price">$18.00</span>
+                            <button class="btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-product="eclairs">
+                    <div class="product-image eclairs">
+                        <span class="product-badge">Creamy</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Chocolate Eclairs</h3>
+                        <p>Choux pastry filled with cream and chocolate glaze</p>
+                        <div class="product-price">
+                            <span class="price">$16.00</span>
+                            <button class="btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Seasonal -->
         <div class="category-content" id="seasonal">
             <div class="products">
-                <div class="product-card" data-product="pumpkin-spice">
-                    <div class="product-image matcha-latte">
-                        <span class="product-badge">Seasonal</span>
+                <div class="product-card" data-product="pumpkin-cake">
+                    <div class="product-image carrot-cake">
+                        <span class="product-badge">Autumn</span>
                     </div>
                     <div class="product-info">
-                        <h3>Pumpkin Spice Latte</h3>
-                        <p>Seasonal favorite with pumpkin and spices</p>
+                        <h3>Pumpkin Spice Cake</h3>
+                        <p>Seasonal pumpkin cake with cream cheese frosting</p>
                         <div class="product-price">
-                            <span class="price">$5.25</span>
+                            <span class="price">$28.00</span>
                             <button class="btn">View Details</button>
                         </div>
                     </div>
                 </div>
                 
-                <div class="product-card" data-product="peppermint-mocha">
-                    <div class="product-image matcha-frappuccino">
+                <div class="product-card" data-product="peppermint-cake">
+                    <div class="product-image red-velvet">
                         <span class="product-badge">Holiday</span>
                     </div>
                     <div class="product-info">
-                        <h3>Peppermint Mocha</h3>
-                        <p>Rich chocolate with refreshing peppermint</p>
+                        <h3>Peppermint Chocolate</h3>
+                        <p>Chocolate cake with peppermint buttercream</p>
                         <div class="product-price">
-                            <span class="price">$5.50</span>
+                            <span class="price">$32.00</span>
                             <button class="btn">View Details</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Hot Brewed -->
-        <div class="category-content" id="hotbrew">
-            <div class="products">
-                <div class="product-card" data-product="pour-over">
-                    <div class="product-image espresso">
-                        <span class="product-badge">Artisan</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Pour Over</h3>
-                        <p>Handcrafted single-origin coffee</p>
-                        <div class="product-price">
-                            <span class="price">$4.25</span>
-                            <button class="btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product-card" data-product="french-press">
-                    <div class="product-image cappuccino">
-                        <span class="product-badge">Rich</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>French Press</h3>
-                        <p>Full-bodied coffee with rich oils</p>
-                        <div class="product-price">
-                            <span class="price">$4.75</span>
-                            <button class="btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product-card" data-product="americano">
-                    <div class="product-image latte">
-                        <span class="product-badge">Bold</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Americano</h3>
-                        <p>Espresso with hot water for a smooth drink</p>
-                        <div class="product-price">
-                            <span class="price">$3.75</span>
-                            <button class="btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     </div>
 
     <!-- Desktop Content with Sidebar -->
@@ -1168,43 +1146,43 @@
         <!-- Sidebar - Desktop Only -->
         <div class="sidebar">
             <div class="sidebar-header">
-                <h2>Coffee Menu</h2>
-                <p>Explore our premium coffee selection</p>
+                <h2>Cake Menu</h2>
+                <p>Explore our delicious cake selection</p>
             </div>
             <ul>
                 <li>
-                    <a href="#" class="sidebar-link active" data-category="matcha">
-                        <i class="fas fa-leaf"></i>
-                        <span>Matcha Series</span>
+                    <a href="#" class="sidebar-link active" data-category="classic">
+                        <i class="fas fa-birthday-cake"></i>
+                        <span>Classic Cakes</span>
                         <span class="category-count">3</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="sidebar-link" data-category="espresso">
-                        <i class="fas fa-coffee"></i>
-                        <span>Espresso Classics</span>
-                        <span class="category-count">3</span>
+                    <a href="#" class="sidebar-link" data-category="cheesecakes">
+                        <i class="fas fa-cheese"></i>
+                        <span>Cheesecakes</span>
+                        <span class="category-count">2</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="sidebar-link" data-category="coldbrew">
-                        <i class="fas fa-snowflake"></i>
-                        <span>Cold Brew</span>
+                    <a href="#" class="sidebar-link" data-category="specialty">
+                        <i class="fas fa-star"></i>
+                        <span>Specialty Cakes</span>
+                        <span class="category-count">2</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="sidebar-link" data-category="pastries">
+                        <i class="fas fa-cookie-bite"></i>
+                        <span>Pastries</span>
                         <span class="category-count">2</span>
                     </a>
                 </li>
                 <li>
                     <a href="#" class="sidebar-link" data-category="seasonal">
                         <i class="fas fa-calendar-alt"></i>
-                        <span>Seasonal Specials</span>
+                        <span>Seasonal</span>
                         <span class="category-count">2</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="sidebar-link" data-category="hotbrew">
-                        <i class="fas fa-fire"></i>
-                        <span>Hot Brewed</span>
-                        <span class="category-count">3</span>
                     </a>
                 </li>
             </ul>
@@ -1212,51 +1190,51 @@
 
         <!-- Content Area - Desktop -->
         <div class="content">
-            <!-- Matcha Series (Default Active) -->
-            <div class="category-content active" id="desktop-matcha">
+            <!-- Classic Cakes (Default Active) -->
+            <div class="category-content active" id="desktop-classic">
                 <div class="content-header">
-                    <h1>Matcha Series</h1>
-                    <p class="category-description">Our premium matcha drinks made with ceremonial-grade matcha powder, carefully whisked to perfection for a smooth, rich flavor and vibrant green color.</p>
+                    <h1>Classic Cakes</h1>
+                    <p class="category-description">Our timeless cake recipes that have been perfected over generations. Each classic cake is made with premium ingredients and traditional techniques for that perfect homemade taste.</p>
                 </div>
                 
                 <div class="products">
-                    <div class="product-card" data-product="matcha-latte">
-                        <div class="product-image matcha-latte">
+                    <div class="product-card" data-product="chocolate-cake">
+                        <div class="product-image chocolate-cake">
                             <span class="product-badge">Popular</span>
                         </div>
                         <div class="product-info">
-                            <h3>Matcha Latte</h3>
-                            <p>Ceremonial matcha whisked with steamed milk of your choice, lightly sweetened.</p>
+                            <h3>Chocolate Fudge</h3>
+                            <p>Rich, moist chocolate cake layered with decadent fudge frosting and chocolate ganache.</p>
                             <div class="product-price">
-                                <span class="price">$4.50</span>
+                                <span class="price">$28.00</span>
                                 <button class="btn">View Details</button>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="product-card" data-product="matcha-frappuccino">
-                        <div class="product-image matcha-frappuccino">
-                            <span class="product-badge">New</span>
+                    <div class="product-card" data-product="red-velvet">
+                        <div class="product-image red-velvet">
+                            <span class="product-badge">Classic</span>
                         </div>
                         <div class="product-info">
-                            <h3>Matcha Frappuccino</h3>
-                            <p>Blended matcha with ice, milk, and a touch of sweetness, topped with whipped cream.</p>
+                            <h3>Red Velvet</h3>
+                            <p>Velvety red cake with a hint of cocoa, layered with traditional cream cheese frosting.</p>
                             <div class="product-price">
-                                <span class="price">$5.25</span>
+                                <span class="price">$32.00</span>
                                 <button class="btn">View Details</button>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="product-card" data-product="iced-matcha">
-                        <div class="product-image iced-matcha">
-                            <span class="product-badge">Refreshing</span>
+                    <div class="product-card" data-product="carrot-cake">
+                        <div class="product-image carrot-cake">
+                            <span class="product-badge">Healthy</span>
                         </div>
                         <div class="product-info">
-                            <h3>Iced Matcha</h3>
-                            <p>Chilled matcha over ice, lightly sweetened to let the authentic flavor shine through.</p>
+                            <h3>Carrot Cake</h3>
+                            <p>Moist spiced carrot cake with walnuts, raisins, and cream cheese frosting.</p>
                             <div class="product-price">
-                                <span class="price">$4.00</span>
+                                <span class="price">$26.00</span>
                                 <button class="btn">View Details</button>
                             </div>
                         </div>
@@ -1264,170 +1242,157 @@
                 </div>
             </div>
             
-            <!-- Other desktop categories would go here -->
-             <!-- Espresso Classics -->
-        <div class="category-content" id="espresso">
-            <div class="products">
-                <div class="product-card" data-product="espresso">
-                    <div class="product-image espresso">
-                        <span class="product-badge">Strong</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Espresso</h3>
-                        <p>A concentrated shot of our finest coffee beans</p>
-                        <div class="product-price">
-                            <span class="price">$3.00</span>
-                            <button class="btn">View Details</button>
+            <!-- Cheesecakes -->
+            <div class="category-content" id="desktop-cheesecakes">
+                <div class="content-header">
+                    <h1>Cheesecakes</h1>
+                    <p class="category-description">Creamy, rich cheesecakes with perfectly balanced sweetness. Our cheesecakes feature a buttery graham cracker crust and velvety smooth filling that melts in your mouth.</p>
+                </div>
+                <div class="products">
+                    <div class="product-card" data-product="cheesecake">
+                        <div class="product-image cheesecake">
+                            <span class="product-badge">Creamy</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>New York Cheesecake</h3>
+                            <p>Classic creamy cheesecake with graham crust, baked to perfection with a hint of lemon.</p>
+                            <div class="product-price">
+                                <span class="price">$30.00</span>
+                                <button class="btn">View Details</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="product-card" data-product="cappuccino">
-                    <div class="product-image cappuccino">
-                        <span class="product-badge">Classic</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Cappuccino</h3>
-                        <p>Espresso with steamed milk and thick foam</p>
-                        <div class="product-price">
-                            <span class="price">$4.25</span>
-                            <button class="btn">View Details</button>
+                    
+                    <div class="product-card" data-product="berry-cheesecake">
+                        <div class="product-image red-velvet">
+                            <span class="product-badge">Fruity</span>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="product-card" data-product="latte">
-                    <div class="product-image latte">
-                        <span class="product-badge">Creamy</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Latte</h3>
-                        <p>Smooth espresso with steamed milk</p>
-                        <div class="product-price">
-                            <span class="price">$4.50</span>
-                            <button class="btn">View Details</button>
+                        <div class="product-info">
+                            <h3>Berry Cheesecake</h3>
+                            <p>Creamy cheesecake topped with a vibrant mix of fresh berries and berry compote.</p>
+                            <div class="product-price">
+                                <span class="price">$34.00</span>
+                                <button class="btn">View Details</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Cold Brew -->
-        <div class="category-content" id="coldbrew">
-            <div class="products">
-                <div class="product-card" data-product="cold-brew">
-                    <div class="product-image cold-brew">
-                        <span class="product-badge">Smooth</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Classic Cold Brew</h3>
-                        <p>Steeped for 18 hours for smooth, low-acidity flavor</p>
-                        <div class="product-price">
-                            <span class="price">$4.75</span>
-                            <button class="btn">View Details</button>
+            
+            <!-- Specialty Cakes -->
+            <div class="category-content" id="desktop-specialty">
+                <div class="content-header">
+                    <h1>Specialty Cakes</h1>
+                    <p class="category-description">Unique and innovative cake creations that showcase our pastry chefs' creativity. These specialty cakes feature unexpected flavor combinations and artistic presentations.</p>
+                </div>
+                <div class="products">
+                    <div class="product-card" data-product="tiramisu">
+                        <div class="product-image tiramisu">
+                            <span class="product-badge">Italian</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Tiramisu</h3>
+                            <p>Layers of coffee-soaked ladyfingers and mascarpone cream, dusted with cocoa powder.</p>
+                            <div class="product-price">
+                                <span class="price">$26.00</span>
+                                <button class="btn">View Details</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="product-card" data-product="nitro-brew">
-                    <div class="product-image nitro-brew">
-                        <span class="product-badge">Cascading</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Nitro Cold Brew</h3>
-                        <p>Infused with nitrogen for creamy texture</p>
-                        <div class="product-price">
-                            <span class="price">$5.50</span>
-                            <button class="btn">View Details</button>
+                    
+                    <div class="product-card" data-product="fruit-tart">
+                        <div class="product-image fruit-tart">
+                            <span class="product-badge">Fresh</span>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Seasonal Specials -->
-        <div class="category-content" id="seasonal">
-            <div class="products">
-                <div class="product-card" data-product="pumpkin-spice">
-                    <div class="product-image matcha-latte">
-                        <span class="product-badge">Seasonal</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Pumpkin Spice Latte</h3>
-                        <p>Seasonal favorite with pumpkin and spices</p>
-                        <div class="product-price">
-                            <span class="price">$5.25</span>
-                            <button class="btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product-card" data-product="peppermint-mocha">
-                    <div class="product-image matcha-frappuccino">
-                        <span class="product-badge">Holiday</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Peppermint Mocha</h3>
-                        <p>Rich chocolate with refreshing peppermint</p>
-                        <div class="product-price">
-                            <span class="price">$5.50</span>
-                            <button class="btn">View Details</button>
+                        <div class="product-info">
+                            <h3>Fresh Fruit Tart</h3>
+                            <p>Buttery shortcrust filled with vanilla pastry cream and topped with seasonal fresh fruits.</p>
+                            <div class="product-price">
+                                <span class="price">$24.00</span>
+                                <button class="btn">View Details</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Hot Brewed -->
-        <div class="category-content" id="hotbrew">
-            <div class="products">
-                <div class="product-card" data-product="pour-over">
-                    <div class="product-image espresso">
-                        <span class="product-badge">Artisan</span>
+            
+            <!-- Pastries -->
+            <div class="category-content" id="desktop-pastries">
+                <div class="content-header">
+                    <h1>Pastries</h1>
+                    <p class="category-description">Delicate and elegant pastries perfect for any occasion. Our pastry selection includes both classic French creations and modern interpretations.</p>
+                </div>
+                <div class="products">
+                    <div class="product-card" data-product="macarons">
+                        <div class="product-image macarons">
+                            <span class="product-badge">French</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Macarons (6 pcs)</h3>
+                            <p>Delicate French macarons in assorted flavors including vanilla, chocolate, raspberry, and pistachio.</p>
+                            <div class="product-price">
+                                <span class="price">$18.00</span>
+                                <button class="btn">View Details</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <h3>Pour Over</h3>
-                        <p>Handcrafted single-origin coffee</p>
-                        <div class="product-price">
-                            <span class="price">$4.25</span>
-                            <button class="btn">View Details</button>
+                    
+                    <div class="product-card" data-product="eclairs">
+                        <div class="product-image eclairs">
+                            <span class="product-badge">Creamy</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Chocolate Eclairs</h3>
+                            <p>Choux pastry filled with vanilla cream and topped with rich chocolate glaze.</p>
+                            <div class="product-price">
+                                <span class="price">$16.00</span>
+                                <button class="btn">View Details</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="product-card" data-product="french-press">
-                    <div class="product-image cappuccino">
-                        <span class="product-badge">Rich</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>French Press</h3>
-                        <p>Full-bodied coffee with rich oils</p>
-                        <div class="product-price">
-                            <span class="price">$4.75</span>
-                            <button class="btn">View Details</button>
+            </div>
+            
+            <!-- Seasonal -->
+            <div class="category-content" id="desktop-seasonal">
+                <div class="content-header">
+                    <h1>Seasonal Specials</h1>
+                    <p class="category-description">Limited-time offerings that celebrate the flavors of each season. These special creations are available for a short time only, so don't miss out!</p>
+                </div>
+                <div class="products">
+                    <div class="product-card" data-product="pumpkin-cake">
+                        <div class="product-image carrot-cake">
+                            <span class="product-badge">Autumn</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Pumpkin Spice Cake</h3>
+                            <p>Seasonal pumpkin cake with warm spices, cream cheese frosting, and candied pecans.</p>
+                            <div class="product-price">
+                                <span class="price">$28.00</span>
+                                <button class="btn">View Details</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="product-card" data-product="americano">
-                    <div class="product-image latte">
-                        <span class="product-badge">Bold</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Americano</h3>
-                        <p>Espresso with hot water for a smooth drink</p>
-                        <div class="product-price">
-                            <span class="price">$3.75</span>
-                            <button class="btn">View Details</button>
+                    
+                    <div class="product-card" data-product="peppermint-cake">
+                        <div class="product-image red-velvet">
+                            <span class="product-badge">Holiday</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Peppermint Chocolate</h3>
+                            <p>Rich chocolate cake with peppermint buttercream and crushed candy cane topping.</p>
+                            <div class="product-price">
+                                <span class="price">$32.00</span>
+                                <button class="btn">View Details</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-        </div>
-    </div>
- <!-- Footer -->
+
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-column">
@@ -1495,17 +1460,17 @@
                 <i class="fas fa-home mobile-nav-icon"></i>
                 <span class="mobile-nav-label">Menu</span>
             </a>
-            <a href="#" class="mobile-nav-item active">
+            <a href="#" class="mobile-nav-item">
                 <i class="fas fa-coffee mobile-nav-icon"></i>
                 <span class="mobile-nav-label">Coffee</span>
+            </a>
+            <a href="cake-categories.html" class="mobile-nav-item active">
+                <i class="fas fa-birthday-cake mobile-nav-icon"></i>
+                <span class="mobile-nav-label">Cakes</span>
             </a>
             <a href="orders.html" class="mobile-nav-item">
                 <i class="fas fa-shopping-bag mobile-nav-icon"></i>
                 <span class="mobile-nav-label">Cart</span>
-            </a>
-            <a href="#" class="mobile-nav-item">
-                <i class="fas fa-user mobile-nav-icon"></i>
-                <span class="mobile-nav-label">Account</span>
             </a>
         </div>
     </div>
@@ -1513,83 +1478,71 @@
     <script>
         // Product data
         const products = {
-            'matcha-latte': {
-                title: 'Matcha Latte',
-                description: 'Our signature matcha latte made with ceremonial-grade matcha powder, carefully whisked and combined with your choice of milk. A perfect balance of earthy matcha and creamy sweetness that will transport you to a Japanese tea garden.',
-                price: 4.50,
-                imageClass: 'matcha-latte'
+            'chocolate-cake': {
+                title: 'Chocolate Fudge Cake',
+                description: 'Our signature chocolate fudge cake features layers of rich, moist chocolate cake filled and frosted with decadent chocolate fudge buttercream. Topped with chocolate ganache and chocolate shavings for the ultimate chocolate experience.',
+                price: 28.00,
+                imageClass: 'chocolate-cake'
             },
-            'matcha-frappuccino': {
-                title: 'Matcha Frappuccino',
-                description: 'A refreshing blended beverage featuring our premium matcha, ice, and a touch of sweetness. Topped with whipped cream and matcha powder for an indulgent treat that cools and energizes simultaneously.',
-                price: 5.25,
-                imageClass: 'matcha-frappuccino'
+            'red-velvet': {
+                title: 'Red Velvet Cake',
+                description: 'Classic red velvet cake with its signature velvety texture and subtle cocoa flavor. Each layer is perfectly moist and paired with our traditional cream cheese frosting that balances sweetness with a slight tang.',
+                price: 32.00,
+                imageClass: 'red-velvet'
             },
-            'iced-matcha': {
-                title: 'Iced Matcha',
-                description: 'Pure matcha goodness served over ice. Lightly sweetened to let the authentic matcha flavor shine through. Perfect for warm days when you need a refreshing yet energizing beverage.',
-                price: 4.00,
-                imageClass: 'iced-matcha'
+            'carrot-cake': {
+                title: 'Carrot Cake',
+                description: 'Our spiced carrot cake is packed with freshly grated carrots, walnuts, and raisins. The warm spices of cinnamon and nutmeg complement the natural sweetness of carrots, all topped with creamy cream cheese frosting.',
+                price: 26.00,
+                imageClass: 'carrot-cake'
             },
-            'espresso': {
-                title: 'Espresso',
-                description: 'A bold and concentrated shot of our finest coffee beans, expertly extracted to highlight the complex flavors and aromas. The perfect foundation for any coffee drink or enjoyed on its own.',
-                price: 3.00,
-                imageClass: 'espresso'
+            'cheesecake': {
+                title: 'New York Cheesecake',
+                description: 'The ultimate classic cheesecake with a buttery graham cracker crust and incredibly smooth, dense cream cheese filling. Baked to perfection with a hint of lemon and vanilla for that authentic New York flavor.',
+                price: 30.00,
+                imageClass: 'cheesecake'
             },
-            'cappuccino': {
-                title: 'Cappuccino',
-                description: 'The classic Italian coffee drink with equal parts espresso, steamed milk, and thick milk foam. A perfect balance of strong coffee and creamy texture in every sip.',
-                price: 4.25,
-                imageClass: 'cappuccino'
+            'berry-cheesecake': {
+                title: 'Berry Cheesecake',
+                description: 'Creamy cheesecake topped with a vibrant assortment of fresh berries including strawberries, blueberries, raspberries, and blackberries. The berry compote adds a burst of fruity flavor that complements the rich cheesecake.',
+                price: 34.00,
+                imageClass: 'red-velvet'
             },
-            'latte': {
-                title: 'Latte',
-                description: 'Smooth espresso combined with velvety steamed milk and a light layer of foam. Our most popular milk-based coffee drink, customizable with various flavor syrups.',
-                price: 4.50,
-                imageClass: 'latte'
+            'tiramisu': {
+                title: 'Tiramisu',
+                description: 'Authentic Italian tiramisu made with layers of espresso-soaked ladyfingers and mascarpone cream. Dusted with cocoa powder for the perfect balance of coffee and creamy sweetness.',
+                price: 26.00,
+                imageClass: 'tiramisu'
             },
-            'cold-brew': {
-                title: 'Classic Cold Brew',
-                description: 'Our signature cold brew steeped for 18 hours to extract maximum flavor with minimal acidity. The result is an incredibly smooth, rich coffee with chocolatey undertones.',
-                price: 4.75,
-                imageClass: 'cold-brew'
+            'fruit-tart': {
+                title: 'Fresh Fruit Tart',
+                description: 'Buttery shortcrust pastry filled with smooth vanilla pastry cream and artfully arranged with seasonal fresh fruits. A light and refreshing dessert that showcases the natural sweetness of fruits.',
+                price: 24.00,
+                imageClass: 'fruit-tart'
             },
-            'nitro-brew': {
-                title: 'Nitro Cold Brew',
-                description: 'Infused with nitrogen for a creamy, Guinness-like texture and cascading visual effect. Served cold from the tap with a naturally sweet flavor profile and no added sugar.',
-                price: 5.50,
-                imageClass: 'nitro-brew'
+            'macarons': {
+                title: 'Macarons (6 pieces)',
+                description: 'Delicate French macarons with crisp shells and chewy interiors. Our assortment includes vanilla bean, dark chocolate, raspberry, pistachio, lemon, and salted caramel flavors.',
+                price: 18.00,
+                imageClass: 'macarons'
             },
-            'pumpkin-spice': {
-                title: 'Pumpkin Spice Latte',
-                description: 'Our seasonal favorite featuring real pumpkin, warm spices, and espresso topped with whipped cream and a sprinkle of pumpkin pie spice.',
-                price: 5.25,
-                imageClass: 'matcha-latte'
+            'eclairs': {
+                title: 'Chocolate Eclairs',
+                description: 'Light choux pastry filled with vanilla pastry cream and topped with rich chocolate glaze. The perfect balance of airy pastry, creamy filling, and chocolatey topping.',
+                price: 16.00,
+                imageClass: 'eclairs'
             },
-            'peppermint-mocha': {
-                title: 'Peppermint Mocha',
-                description: 'A holiday classic combining rich chocolate, refreshing peppermint, and our signature espresso, topped with whipped cream and crushed candy cane.',
-                price: 5.50,
-                imageClass: 'matcha-frappuccino'
+            'pumpkin-cake': {
+                title: 'Pumpkin Spice Cake',
+                description: 'Seasonal pumpkin cake infused with warm autumn spices like cinnamon, nutmeg, and ginger. Layered with cream cheese frosting and topped with candied pecans for extra crunch.',
+                price: 28.00,
+                imageClass: 'carrot-cake'
             },
-            'pour-over': {
-                title: 'Pour Over',
-                description: 'Handcrafted single-origin coffee brewed to order for maximum flavor extraction and clarity. Each cup highlights the unique characteristics of the beans.',
-                price: 4.25,
-                imageClass: 'espresso'
-            },
-            'french-press': {
-                title: 'French Press',
-                description: 'Full-bodied coffee with rich oils and deep flavor profile. Brewed in small batches for the perfect balance of strength and smoothness.',
-                price: 4.75,
-                imageClass: 'cappuccino'
-            },
-            'americano': {
-                title: 'Americano',
-                description: 'Smooth espresso diluted with hot water for a rich, full-flavored coffee drink that maintains the complexity of our signature roast.',
-                price: 3.75,
-                imageClass: 'latte'
+            'peppermint-cake': {
+                title: 'Peppermint Chocolate Cake',
+                description: 'Rich chocolate cake layered with peppermint buttercream and topped with crushed candy canes. A festive holiday treat that combines chocolatey richness with refreshing peppermint.',
+                price: 32.00,
+                imageClass: 'red-velvet'
             }
         };
 
@@ -1608,6 +1561,8 @@
         const categoryNavItems = document.querySelectorAll('.category-nav-item');
         const categoryContents = document.querySelectorAll('.category-content');
         const pageHeader = document.getElementById('pageHeader');
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const desktopCategoryContents = document.querySelectorAll('.content .category-content');
 
         // Current product and quantity
         let currentProduct = null;
@@ -1629,6 +1584,9 @@
             
             // Set up product card click events
             setupProductCards();
+            
+            // Set up sidebar navigation
+            setupSidebarNavigation();
         });
 
         // Category navigation functionality
@@ -1646,6 +1604,30 @@
                     categoryContents.forEach(content => {
                         content.classList.remove('active');
                         if (content.id === category) {
+                            content.classList.add('active');
+                        }
+                    });
+                });
+            });
+        }
+
+        // Sidebar navigation functionality
+        function setupSidebarNavigation() {
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get the category from data attribute
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update active state in sidebar
+                    sidebarLinks.forEach(sidebarLink => sidebarLink.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show the corresponding category content
+                    desktopCategoryContents.forEach(content => {
+                        content.classList.remove('active');
+                        if (content.id === `desktop-${category}`) {
                             content.classList.add('active');
                         }
                     });
