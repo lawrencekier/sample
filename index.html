@@ -455,13 +455,13 @@
             font-size: 0.75rem;
             font-weight: 500;
         }
-        
-       /* Coffee Popup Menu - Modal Style */
+   /* Coffee Popup Menu - Modal Style */
 .coffee-popup {
     display: none;
     position: fixed;
     bottom: 70px;
-    right: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px) scale(0.9);
     background: var(--white);
     border-radius: 16px;
     padding: 1rem;
@@ -470,13 +470,12 @@
     width: 140px;
     height: auto;
     opacity: 0;
-    transform: translateY(20px) scale(0.9);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .coffee-popup.show {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateX(-50%) translateY(0) scale(1);
 }
 
 .coffee-popup-content {
@@ -887,6 +886,11 @@ document.addEventListener('click', function(event) {
     if (!popup.contains(event.target) && event.target !== coffeeButton && !coffeeButton.contains(event.target)) {
         hideCoffeePopup();
     }
+});
+
+// Close popup when scrolling
+window.addEventListener('scroll', function() {
+    hideCoffeePopup();
 });
     </script>
 </body>
