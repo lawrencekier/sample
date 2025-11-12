@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brew & Bites | Modern Cafe</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -22,7 +22,7 @@
             --text: #5D4037;
             --gray: #A1887F;
             --white: #FFFFFF;
-            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --shadow: 0 4px 15px rgba(0,0,0,0.1);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         
@@ -31,13 +31,13 @@
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
+            padding-bottom: 80px;
         }
         
-        /* Navigation Bar */
+        /* Navigation Bar - Mobile Optimized */
         nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.2rem 5%;
+            background: var(--white);
+            padding: 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -51,8 +51,8 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.8rem;
+            gap: 8px;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--primary);
         }
@@ -62,55 +62,14 @@
         }
         
         .nav-links {
-            display: flex;
-            gap: 2.5rem;
-        }
-        
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-            padding: 0.5rem 0;
-        }
-        
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--secondary);
-            transition: var(--transition);
-        }
-        
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--primary);
-        }
-        
-        .nav-links a:hover:after, .nav-links a.active:after {
-            width: 100%;
-        }
-        
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
+            display: none;
         }
         
         .cart-icon {
             position: relative;
             cursor: pointer;
             color: var(--text);
-            transition: var(--transition);
-            font-size: 1.5rem;
-        }
-        
-        .cart-icon:hover {
-            color: var(--primary);
-            transform: translateY(-2px);
+            font-size: 1.4rem;
         }
         
         .cart-count {
@@ -120,17 +79,16 @@
             background: linear-gradient(135deg, var(--secondary), var(--accent));
             color: var(--white);
             border-radius: 50%;
-            width: 22px;
-            height: 22px;
+            width: 20px;
+            height: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
-            box-shadow: 0 3px 8px rgba(210, 105, 30, 0.3);
         }
         
-        /* Hero Section */
+        /* Hero Section - Mobile Optimized */
         .hero {
             background: linear-gradient(rgba(62, 39, 35, 0.7), rgba(62, 39, 35, 0.7)), 
                         url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
@@ -138,42 +96,53 @@
             background-position: center;
             color: var(--light);
             text-align: center;
-            padding: 6rem 2rem;
-            margin-bottom: 4rem;
+            padding: 3rem 1.5rem;
+            margin-bottom: 2rem;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
         }
         
         .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
+            font-size: 1rem;
             margin: 0 auto 2rem;
             opacity: 0.9;
+            max-width: 100%;
+        }
+        
+        .hero-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
         }
         
         .btn {
             background: linear-gradient(135deg, var(--secondary), var(--accent));
             color: var(--white);
             border: none;
-            padding: 0.9rem 2rem;
+            padding: 1.2rem 2rem;
             border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
             box-shadow: 0 4px 15px rgba(210, 105, 30, 0.3);
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 8px;
+            font-size: 1rem;
+            min-height: 50px;
+            width: 100%;
+            max-width: 280px;
+            justify-content: center;
         }
         
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 7px 20px rgba(210, 105, 30, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(210, 105, 30, 0.4);
         }
         
         .btn-outline {
@@ -188,55 +157,41 @@
             color: var(--primary);
         }
         
-        /* Main Content */
+        /* Main Content - Mobile Optimized */
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem 4rem;
+            width: 100%;
+            padding: 0 1rem 2rem;
         }
         
         .section-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
         
         .section-title {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             font-weight: 700;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            width: 60%;
-            height: 4px;
-            background: linear-gradient(to right, transparent, var(--secondary), transparent);
-            bottom: -10px;
-            left: 20%;
-            border-radius: 2px;
         }
         
         .section-subtitle {
             color: var(--gray);
-            font-size: 1.1rem;
-            max-width: 600px;
+            font-size: 1rem;
+            max-width: 100%;
             margin: 0 auto;
         }
         
         /* Menu Sections */
         .menu-section {
-            margin-bottom: 5rem;
+            margin-bottom: 3rem;
         }
         
-        /* Category Grid */
+        /* Category Grid - Mobile 2-column */
         .categories {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
         
         .category-card {
@@ -249,13 +204,12 @@
             position: relative;
         }
         
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        .category-card:active {
+            transform: scale(0.98);
         }
         
         .category-image {
-            height: 200px;
+            height: 160px;
             background-size: cover;
             background-position: center;
             position: relative;
@@ -273,13 +227,13 @@
         
         .category-badge {
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 12px;
+            right: 12px;
             background: var(--primary);
             color: var(--white);
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: 600;
             z-index: 2;
         }
@@ -317,97 +271,82 @@
         }
         
         .category-info {
-            padding: 1.8rem;
+            padding: 1.5rem;
         }
         
         .category-info h2 {
             margin-bottom: 0.8rem;
             color: var(--primary);
-            font-size: 1.4rem;
+            font-size: 1.3rem;
         }
         
         .category-info p {
             color: var(--gray);
             margin-bottom: 1.5rem;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
         
         .btn-sm {
-            padding: 0.7rem 1.5rem;
+            padding: 1rem 1.5rem;
             font-size: 0.9rem;
+            min-height: 44px;
+            width: 100%;
         }
         
-        /* Features Section */
+        /* Features Section - Mobile Stack */
         .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 5rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 3rem 0;
         }
         
         .feature-card {
             background: var(--white);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 16px;
             text-align: center;
             box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         
         .feature-icon {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--secondary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
         
         .feature-card h3 {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             color: var(--primary);
+            font-size: 1.2rem;
         }
         
         .feature-card p {
             color: var(--gray);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
         
-        /* Footer */
+        /* Footer - Mobile Optimized */
         footer {
             background: var(--dark);
             color: var(--light);
-            padding: 4rem 2rem 2rem;
+            padding: 2rem 1rem 1rem;
+            margin-top: 2rem;
         }
         
         .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
         
         .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
             color: var(--light);
-            position: relative;
-            padding-bottom: 0.8rem;
-        }
-        
-        .footer-column h3:after {
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 3px;
-            background: var(--secondary);
-            bottom: 0;
-            left: 0;
-            border-radius: 2px;
         }
         
         .footer-links {
@@ -415,27 +354,22 @@
         }
         
         .footer-links li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
         }
         
         .footer-links a {
             color: var(--gray);
             text-decoration: none;
-            transition: var(--transition);
             display: flex;
             align-items: center;
             gap: 8px;
-        }
-        
-        .footer-links a:hover {
-            color: var(--light);
-            transform: translateX(5px);
+            font-size: 0.9rem;
         }
         
         .social-links {
             display: flex;
             gap: 1rem;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
         }
         
         .social-links a {
@@ -447,170 +381,109 @@
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
             color: var(--light);
-            transition: var(--transition);
-        }
-        
-        .social-links a:hover {
-            background: var(--secondary);
-            transform: translateY(-3px);
         }
         
         .copyright {
             text-align: center;
-            padding-top: 2rem;
+            padding-top: 1.5rem;
             border-top: 1px solid rgba(255,255,255,0.1);
             color: var(--gray);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
         
-        /* Responsive Design */
-        @media (max-width: 768px) {
+        /* Bottom mobile navigation bar */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-top: 1px solid rgba(139, 69, 19, 0.1);
+            padding: 0.8rem 0.5rem;
+            z-index: 1000;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .mobile-nav-items {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .mobile-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text);
+            padding: 0.5rem;
+            border-radius: 10px;
+            transition: var(--transition);
+            flex: 1;
+            max-width: 80px;
+        }
+        
+        .mobile-nav-item.active {
+            color: var(--primary);
+            background: rgba(139, 69, 19, 0.1);
+        }
+        
+        .mobile-nav-icon {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .mobile-nav-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        /* Tablet View */
+        @media (min-width: 768px) {
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .features {
+                flex-direction: row;
+                gap: 1.5rem;
+            }
+            
+            .hero-actions {
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            .btn {
+                width: auto;
+                min-width: 200px;
+            }
+        }
+        
+        /* Desktop View */
+        @media (min-width: 1024px) {
+            .categories {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
             .nav-links {
+                display: flex;
+                gap: 2rem;
+            }
+            
+            .mobile-bottom-nav {
                 display: none;
             }
             
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
+            body {
+                padding-bottom: 0;
             }
         }
-
-
-
-
-        /* Disable mobile responsiveness */
-@media (max-width: 768px) {
-    .categories,
-    .products {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-        gap: 2rem !important;
-    }
-    
-    .container {
-        padding: 2rem !important;
-        max-width: 1200px !important;
-    }
-    
-    .nav-links {
-        display: flex !important;
-    }
-    
-    .main-container {
-        flex-direction: row !important;
-    }
-    
-    .sidebar {
-        width: 280px !important;
-        height: calc(100vh - 80px) !important;
-        position: sticky !important;
-        top: 80px !important;
-    }
-}
-
-/* Force desktop layout on all screens */
-body {
-    min-width: 1024px;
-}
-
-.container {
-    min-width: 1024px;
-}
-/* Mobile-specific improvements */
-@media (max-width: 768px) {
-    /* Maintain desktop layout but with better spacing */
-    .categories,
-    .products {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
-        gap: 1.5rem !important;
-    }
-    
-    /* Larger touch targets */
-    .btn, .product-card, .category-card {
-        min-height: 44px !important;
-    }
-    
-    .btn {
-        padding: 1rem 1.5rem !important;
-        font-size: 1rem !important;
-    }
-    
-    /* Better text readability */
-    body {
-        font-size: 16px !important;
-    }
-    
-    /* Improved spacing */
-    .container {
-        padding: 1.5rem !important;
-    }
-    
-    /* Hide desktop nav on mobile */
-    .nav-links {
-        display: none !important;
-    }
-}
-
-/* Bottom mobile navigation bar */
-.mobile-bottom-nav {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--white);
-    border-top: 1px solid rgba(139, 69, 19, 0.1);
-    padding: 0.5rem;
-    z-index: 1000;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-}
-
-.mobile-nav-items {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.mobile-nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: var(--text);
-    padding: 0.5rem;
-    border-radius: 10px;
-    transition: var(--transition);
-    flex: 1;
-    max-width: 80px;
-}
-
-.mobile-nav-item.active {
-    color: var(--primary);
-    background: rgba(139, 69, 19, 0.1);
-}
-
-.mobile-nav-icon {
-    font-size: 1.2rem;
-    margin-bottom: 0.25rem;
-}
-
-.mobile-nav-label {
-    font-size: 0.7rem;
-    font-weight: 500;
-}
-
-@media (max-width: 768px) {
-    .mobile-bottom-nav {
-        display: block;
-    }
-    
-    /* Add padding to prevent content from being hidden behind nav */
-    body {
-        padding-bottom: 70px;
-    }
-}
     </style>
 </head>
 <body>
@@ -647,11 +520,9 @@ body {
             </button>
         </div>
     </section>
-    
 
     <!-- Main Content -->
     <div class="container">
-
         <!-- Features Section -->
         <section class="features">
             <div class="feature-card">
@@ -739,8 +610,6 @@ body {
                 </div>
             </div>
         </section>
-        
-        
         
         <!-- Cake Categories Section -->
         <section class="menu-section" id="cakes">
@@ -844,6 +713,28 @@ body {
         </div>
     </footer>
 
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-bottom-nav">
+        <div class="mobile-nav-items">
+            <a href="index.html" class="mobile-nav-item active">
+                <i class="fas fa-home mobile-nav-icon"></i>
+                <span class="mobile-nav-label">Menu</span>
+            </a>
+            <a href="coffee-categories.html" class="mobile-nav-item">
+                <i class="fas fa-coffee mobile-nav-icon"></i>
+                <span class="mobile-nav-label">Coffee</span>
+            </a>
+            <a href="orders.html" class="mobile-nav-item">
+                <i class="fas fa-shopping-bag mobile-nav-icon"></i>
+                <span class="mobile-nav-label">Cart</span>
+            </a>
+            <a href="#" class="mobile-nav-item">
+                <i class="fas fa-user mobile-nav-icon"></i>
+                <span class="mobile-nav-label">Account</span>
+            </a>
+        </div>
+    </div>
+
     <script>
         // Update cart count from localStorage
         document.addEventListener('DOMContentLoaded', function() {
@@ -851,27 +742,5 @@ body {
             document.querySelector('.cart-count').textContent = cart.length;
         });
     </script>
-
-    <!-- Mobile Bottom Navigation -->
-<div class="mobile-bottom-nav">
-    <div class="mobile-nav-items">
-        <a href="index.html" class="mobile-nav-item active">
-            <i class="fas fa-home mobile-nav-icon"></i>
-            <span class="mobile-nav-label">Menu</span>
-        </a>
-        <a href="coffee-categories.html" class="mobile-nav-item">
-            <i class="fas fa-coffee mobile-nav-icon"></i>
-            <span class="mobile-nav-label">Coffee</span>
-        </a>
-        <a href="orders.html" class="mobile-nav-item">
-            <i class="fas fa-shopping-bag mobile-nav-icon"></i>
-            <span class="mobile-nav-label">Cart</span>
-        </a>
-        <a href="#" class="mobile-nav-item">
-            <i class="fas fa-user mobile-nav-icon"></i>
-            <span class="mobile-nav-label">Account</span>
-        </a>
-    </div>
-</div>
 </body>
 </html>
