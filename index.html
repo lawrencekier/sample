@@ -916,6 +916,20 @@
         grid-template-columns: repeat(4, 1fr);
     }
 }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
     </style>
 </head>
 <body>
@@ -1278,11 +1292,11 @@
         <div class="mobile-nav-items">
             <a href="index.html" class="mobile-nav-item active">
                 <i class="fas fa-home mobile-nav-icon"></i>
-                <span class="mobile-nav-label">Menu</span>
+                <span class="mobile-nav-label">Home</span>
             </a>
             <a href="#" class="mobile-nav-item" onclick="toggleCoffeePopup(event)">
                 <i class="fas fa-coffee mobile-nav-icon"></i>
-                <span class="mobile-nav-label">Coffee</span>
+                <span class="mobile-nav-label">Food</span>
             </a>
             <a href="orders.html" class="mobile-nav-item">
                 <i class="fas fa-shopping-bag mobile-nav-icon"></i>
@@ -1465,6 +1479,16 @@ function startAutoScroll() {
         scrollPosition = bestSellerItems.scrollLeft;
     });
 }
+// Make logo clickable to scroll to hero section
+document.addEventListener('DOMContentLoaded', function() {
+    const logo = document.querySelector('.logo');
+    logo.style.cursor = 'pointer';
+    logo.addEventListener('click', function() {
+        document.getElementById('hero').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 
     </script>
 </body>
