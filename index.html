@@ -295,15 +295,24 @@
             margin: 0 auto;
         }
         
-        /* Best Sellers Section */
+        /* Best Sellers Section - Horizontal Scroll on Mobile */
         .best-sellers {
             margin: 3rem 0;
+            overflow: hidden;
         }
         
         .best-seller-items {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+            display: flex;
+            gap: 1.2rem;
+            padding: 0.5rem 0;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+        
+        .best-seller-items::-webkit-scrollbar {
+            display: none; /* Chrome, Safari and Opera */
         }
         
         .best-seller-card {
@@ -315,6 +324,8 @@
             opacity: 0;
             transform: translateY(40px);
             transition: all 0.7s ease;
+            flex: 0 0 280px;
+            min-width: 280px;
         }
         
         .best-seller-card:hover {
@@ -323,7 +334,7 @@
         }
         
         .best-seller-image {
-            height: 200px;
+            height: 160px;
             background-size: cover;
             background-position: center;
             position: relative;
@@ -331,46 +342,50 @@
         
         .best-seller-badge {
             position: absolute;
-            top: 12px;
-            left: 12px;
+            top: 10px;
+            left: 10px;
             background: linear-gradient(135deg, var(--secondary), var(--accent));
             color: var(--white);
-            padding: 0.4rem 1rem;
+            padding: 0.3rem 0.8rem;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: 600;
             z-index: 2;
         }
         
         .best-seller-info {
-            padding: 1.5rem;
+            padding: 1.2rem;
         }
         
         .best-seller-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
         }
         
         .best-seller-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--primary);
             font-weight: 600;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
         }
         
         .best-seller-price {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--secondary);
         }
         
         .best-seller-description {
             color: var(--gray);
-            font-size: 0.9rem;
-            margin-bottom: 1.2rem;
-            line-height: 1.5;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
         
         .best-seller-stats {
@@ -385,10 +400,11 @@
             gap: 0.3rem;
             color: var(--secondary);
             font-weight: 600;
+            font-size: 0.85rem;
         }
         
         .best-seller-orders {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--gray);
         }
         
@@ -812,7 +828,15 @@
             }
             
             .best-seller-items {
+                display: grid;
                 grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                overflow-x: visible;
+            }
+            
+            .best-seller-card {
+                flex: 1;
+                min-width: auto;
             }
         }
         
@@ -918,7 +942,7 @@
                 <h2 class="section-title">Best Sellers</h2>
                 <p class="section-subtitle">Our most loved creations, handpicked by our customers</p>
             </div>
-            <div class="best-seller-items">
+            <div class="best-seller-items" id="bestSellerItems">
                 <div class="best-seller-card">
                     <div class="best-seller-image" style="background-image: url('https://images.unsplash.com/photo-1561047029-3000c68339ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
                         <span class="best-seller-badge">#1 Seller</span>
@@ -1254,6 +1278,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             document.querySelector('.cart-count').textContent = cart.length;
+            
+            // Start auto-scroll for best sellers on mobile
+            startAutoScroll();
         });
 
         // Coffee popup functions
@@ -1380,6 +1407,60 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Auto-scroll for best sellers on mobile
+function startAutoScroll() {
+    const bestSellerItems = document.getElementById('bestSellerItems');
+    if (!bestSellerItems) return;
+    
+    let scrollPosition = 0;
+    const cardWidth = 280; // Width of each card + gap
+    const scrollSpeed = 0.5; // Pixels per frame
+    
+    function autoScroll() {
+        // Only auto-scroll on mobile screens
+        if (window.innerWidth >= 768) return;
+        
+        scrollPosition += scrollSpeed;
+        
+        // Reset position when reaching the end
+        if (scrollPosition >= bestSellerItems.scrollWidth - bestSellerItems.clientWidth) {
+            scrollPosition = 0;
+        }
+        
+        bestSellerItems.scrollLeft = scrollPosition;
+        requestAnimationFrame(autoScroll);
+    }
+    
+    // Start auto-scroll
+    requestAnimationFrame(autoScroll);
+    
+    // Pause auto-scroll on hover/touch
+    bestSellerItems.addEventListener('mouseenter', function() {
+        scrollSpeed = 0;
+    });
+    
+    bestSellerItems.addEventListener('mouseleave', function() {
+        scrollSpeed = 0.5;
+    });
+    
+    // Touch events for mobile
+    let isTouching = false;
+    
+    bestSellerItems.addEventListener('touchstart', function() {
+        isTouching = true;
+        scrollSpeed = 0;
+    });
+    
+    bestSellerItems.addEventListener('touchend', function() {
+        isTouching = false;
+        setTimeout(() => {
+            if (!isTouching) {
+                scrollSpeed = 0.5;
+            }
+        }, 2000); // Resume after 2 seconds
+    });
+}
     </script>
 </body>
 </html>
