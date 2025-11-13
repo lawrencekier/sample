@@ -617,6 +617,24 @@
     color: var(--white);
     transform: translateX(-5px);
 }
+.back-btn.icon-only {
+    padding: 0.6rem;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-btn.icon-only i {
+    font-size: 1.1rem;
+}
+
+.back-btn.icon-only:hover {
+    transform: translateX(-5px);
+}
+
 
 /* Mobile-first responsive design */
 @media (max-width: 768px) {
@@ -736,10 +754,11 @@
     </nav>
      <!-- Back Button -->
 <div class="back-button-container">
-    <button class="back-btn" onclick="history.back()">
-        <i class="fas fa-arrow-left"></i> Back to Menu
+    <button class="back-btn icon-only" onclick="history.back()">
+        <i class="fas fa-arrow-left"></i>
     </button>
 </div>
+
 
     <!-- Main Content -->
     <div class="container">
