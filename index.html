@@ -1435,60 +1435,118 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 // ========================
-// AUTO-SCROLL BEST SELLERS (FIXED)
+// AUTO-SCROLL BEST SELLERS (UPDATED & SMOOTH)
 // ========================
 function startAutoScroll() {
     const bestSellerItems = document.getElementById('bestSellerItems');
     if (!bestSellerItems) return;
 
-    let scrollPosition = 0;
-    let scrollSpeed = 0.5; // variable speed
+    // CONFIG
+    let speed = 30; // pixels per second
+    const resumeDelay = 1500; // ms after user interaction before resuming
     let isPaused = false;
+    let lastFrameTime = null;
+    let lastInteraction = 0;
 
-    function autoScroll() {
-        if (window.innerWidth >= 768 || isPaused) {
-            requestAnimationFrame(autoScroll);
-            return;
-        }
-
-        scrollPosition = bestSellerItems.scrollLeft + scrollSpeed;
-
-        // Loop back when reaching end
-        if (scrollPosition >= bestSellerItems.scrollWidth - bestSellerItems.clientWidth) {
-            scrollPosition = 0;
-        }
-
-        bestSellerItems.scrollLeft = scrollPosition;
-        requestAnimationFrame(autoScroll);
+    // Detect if in view (pause when off-screen)
+    let isVisible = true;
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                isVisible = entry.isIntersecting;
+            });
+        }, { threshold: 0.1 });
+        observer.observe(bestSellerItems);
     }
 
-    requestAnimationFrame(autoScroll);
+    // Smooth auto-scroll loop
+    function step(timestamp) {
+        if (!lastFrameTime) lastFrameTime = timestamp;
+        const delta = (timestamp - lastFrameTime) / 1000; // seconds
+        lastFrameTime = timestamp;
 
-    // Pause on hover (desktop)
+        const timeSinceInteraction = Date.now() - lastInteraction;
+
+        if (window.innerWidth < 768 && !isPaused && isVisible && timeSinceInteraction > resumeDelay) {
+            const move = speed * delta;
+            let newPos = bestSellerItems.scrollLeft + move;
+            const maxScroll = bestSellerItems.scrollWidth - bestSellerItems.clientWidth;
+
+            // Loop back to start smoothly
+            if (newPos >= maxScroll) newPos = 0;
+
+            bestSellerItems.scrollLeft = newPos;
+        }
+
+        requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+
+    // Utility to mark user interaction
+    function userInteracted() {
+        lastInteraction = Date.now();
+    }
+
+    // Pause/resume on hover (desktop)
     bestSellerItems.addEventListener('mouseenter', () => isPaused = true);
-    bestSellerItems.addEventListener('mouseleave', () => isPaused = false);
+    bestSellerItems.addEventListener('mouseleave', () => {
+        isPaused = false;
+        userInteracted();
+    });
 
-    // Pause on touch (mobile)
-    bestSellerItems.addEventListener('touchstart', () => isPaused = true);
+    // Touch handling (mobile)
+    bestSellerItems.addEventListener('touchstart', () => {
+        isPaused = true;
+        userInteracted();
+    }, { passive: true });
     bestSellerItems.addEventListener('touchend', () => {
-        setTimeout(() => { isPaused = false; }, 2000);
-    });
+        userInteracted();
+        setTimeout(() => { isPaused = false; }, resumeDelay);
+    }, { passive: true });
 
-    // Update scroll position when user manually scrolls
+    // Manual scroll detection
+    let scrollTimeout;
     bestSellerItems.addEventListener('scroll', () => {
-        scrollPosition = bestSellerItems.scrollLeft;
-    });
+        userInteracted();
+        isPaused = true;
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            isPaused = false;
+            userInteracted();
+        }, 400);
+    }, { passive: true });
+
+    // Wheel detection (desktop scrolling)
+    bestSellerItems.addEventListener('wheel', () => {
+        userInteracted();
+        isPaused = true;
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            isPaused = false;
+            userInteracted();
+        }, 400);
+    }, { passive: true });
 }
-// Make logo clickable to scroll to hero section
+
+// ========================
+// CLICKABLE LOGO SCROLL TO HERO
+// ========================
 document.addEventListener('DOMContentLoaded', function() {
     const logo = document.querySelector('.logo');
-    logo.style.cursor = 'pointer';
-    logo.addEventListener('click', function() {
-        document.getElementById('hero').scrollIntoView({
-            behavior: 'smooth'
+    if (logo) {
+        logo.style.cursor = 'pointer';
+        logo.addEventListener('click', function() {
+            const hero = document.getElementById('hero');
+            if (hero) {
+                hero.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
-    });
+    }
 });
+
 
     </script>
 </body>
