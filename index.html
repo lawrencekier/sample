@@ -296,136 +296,137 @@
         }
         
         /* Best Sellers Section - Horizontal Scroll on Mobile */
-        .best-sellers {
-            margin: 3rem 0;
-            overflow: hidden;
-        }
-        
-        .best-seller-items {
-            display: flex;
-            gap: 1.2rem;
-            padding: 0.5rem 0;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE and Edge */
-        }
-        
-        .best-seller-items::-webkit-scrollbar {
-            display: none; /* Chrome, Safari and Opera */
-        }
-        
-        .best-seller-card {
-            background: var(--white);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.7s ease;
-            flex: 0 0 280px;
-            min-width: 280px;
-        }
-        
-        .best-seller-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-        
-        .best-seller-image {
-            height: 160px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        
-        .best-seller-badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-            color: var(--white);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            z-index: 2;
-        }
-        
-        .best-seller-info {
-            padding: 1.2rem;
-        }
-        
-        .best-seller-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 0.6rem;
-        }
-        
-        .best-seller-title {
-            font-size: 1.1rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 0.2rem;
-        }
-        
-        .best-seller-price {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--secondary);
-        }
-        
-        .best-seller-description {
-            color: var(--gray);
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-            line-height: 1.4;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        
-        .best-seller-stats {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .best-seller-rating {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            color: var(--secondary);
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-        
-        .best-seller-orders {
-            font-size: 0.75rem;
-            color: var(--gray);
-        }
-        
-        /* Stagger slide-up animation for best seller cards */
-        .best-sellers.animate .best-seller-card:nth-child(1) {
-            transition-delay: 0.1s;
-        }
-        .best-sellers.animate .best-seller-card:nth-child(2) {
-            transition-delay: 0.2s;
-        }
-        .best-sellers.animate .best-seller-card:nth-child(3) {
-            transition-delay: 0.3s;
-        }
-        .best-sellers.animate .best-seller-card:nth-child(4) {
-            transition-delay: 0.4s;
-        }
+       .best-sellers {
+    margin: 3rem 0;
+    overflow: hidden;
+}
 
-        .best-sellers.animate .best-seller-card {
-            opacity: 1;
-            transform: translateY(0);
-        }
+.best-seller-items {
+    display: flex;
+    gap: 1.2rem;
+    padding: 0.5rem 1rem 1.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    -webkit-overflow-scrolling: touch; /* iOS smooth scrolling */
+}
+
+.best-seller-items::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+.best-seller-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s ease;
+    flex: 0 0 280px;
+    min-width: 280px;
+}
+
+.best-seller-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.best-seller-image {
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.best-seller-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    color: var(--white);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.best-seller-info {
+    padding: 1.2rem;
+}
+
+.best-seller-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.6rem;
+}
+
+.best-seller-title {
+    font-size: 1.1rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.best-seller-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.best-seller-description {
+    color: var(--gray);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.best-seller-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.best-seller-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--secondary);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.best-seller-orders {
+    font-size: 0.75rem;
+    color: var(--gray);
+}
+
+/* Stagger slide-up animation for best seller cards */
+.best-sellers.animate .best-seller-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+.best-sellers.animate .best-seller-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.best-sellers.animate .best-seller-card:nth-child(3) {
+    transition-delay: 0.3s;
+}
+.best-sellers.animate .best-seller-card:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.best-sellers.animate .best-seller-card {
+    opacity: 1;
+    transform: translateY(0);
+}
         
         /* Menu Sections */
         .menu-section {
@@ -894,6 +895,27 @@
         grid-template-columns: repeat(4, 1fr);
     }
 }
+@media (min-width: 768px) {
+    .best-seller-items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        overflow-x: visible;
+        padding: 0;
+    }
+    
+    .best-seller-card {
+        flex: 1;
+        min-width: auto;
+    }
+}
+
+/* Desktop View */
+@media (min-width: 1024px) {
+    .best-seller-items {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
     </style>
 </head>
 <body>
@@ -1274,58 +1296,72 @@
     </div>
 
     <script>
-        // Update cart count from localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            document.querySelector('.cart-count').textContent = cart.length;
-            
-            // Start auto-scroll for best sellers on mobile
-            startAutoScroll();
-        });
+        // ========================
+// CART COUNT & INIT
+// ========================
+document.addEventListener('DOMContentLoaded', function() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    document.querySelector('.cart-count').textContent = cart.length;
 
-        // Coffee popup functions
+    // Animate hero section
+    const hero = document.getElementById('hero');
+    if (hero) {
+        setTimeout(() => {
+            hero.classList.add('animate');
+        }, 500);
+    }
+
+    // Initial scroll check
+    checkScroll();
+
+    // Start auto-scroll for best sellers
+    startAutoScroll();
+});
+
+
+// ========================
+// COFFEE POPUP FUNCTIONS
+// ========================
 function toggleCoffeePopup(event) {
     event.preventDefault();
     const popup = document.getElementById('coffeePopup');
+    if (!popup) return;
+
     if (popup.classList.contains('show')) {
         popup.classList.remove('show');
-        setTimeout(() => {
-            popup.style.display = 'none';
-        }, 300);
+        setTimeout(() => popup.style.display = 'none', 300);
     } else {
         popup.style.display = 'block';
-        setTimeout(() => {
-            popup.classList.add('show');
-        }, 10);
+        setTimeout(() => popup.classList.add('show'), 10);
     }
 }
 
 function hideCoffeePopup() {
     const popup = document.getElementById('coffeePopup');
+    if (!popup) return;
+
     popup.classList.remove('show');
-    setTimeout(() => {
-        popup.style.display = 'none';
-    }, 300);
+    setTimeout(() => popup.style.display = 'none', 300);
 }
 
 // Close popup when clicking outside
 document.addEventListener('click', function(event) {
     const popup = document.getElementById('coffeePopup');
     const coffeeButton = document.querySelector('.mobile-nav-item:nth-child(2)');
-    
+    if (!popup || !coffeeButton) return;
+
     if (!popup.contains(event.target) && event.target !== coffeeButton && !coffeeButton.contains(event.target)) {
         hideCoffeePopup();
     }
 });
 
 // Close popup when scrolling
-window.addEventListener('scroll', function() {
-    hideCoffeePopup();
-});
+window.addEventListener('scroll', hideCoffeePopup);
 
 
-
-// Scroll animation for all sections - improved version
+// ========================
+// SCROLL ANIMATIONS
+// ========================
 function checkScroll() {
     const sections = document.querySelectorAll('.menu-section, .features, .best-sellers');
     const sectionHeaders = document.querySelectorAll('.section-header');
@@ -1334,69 +1370,44 @@ function checkScroll() {
 
     sections.forEach(section => {
         const sectionTop = section.getBoundingClientRect().top;
-        
         if (sectionTop < triggerBottom) {
             section.classList.add('animate');
-        } else {
-            // Remove animate class when section goes out of view
-            // This allows re-animation when scrolling back
-            if (!section.classList.contains('animate-once')) {
-                section.classList.remove('animate');
-            }
+        } else if (!section.classList.contains('animate-once')) {
+            section.classList.remove('animate');
         }
     });
 
     sectionHeaders.forEach(header => {
         const headerTop = header.getBoundingClientRect().top;
-        
         if (headerTop < triggerBottom) {
             header.classList.add('animate');
-        } else {
-            // Remove animate class when header goes out of view
-            if (!header.classList.contains('animate-once')) {
-                header.classList.remove('animate');
-            }
+        } else if (!header.classList.contains('animate-once')) {
+            header.classList.remove('animate');
         }
     });
 }
 
-// Initialize on load
-document.addEventListener('DOMContentLoaded', function() {
-    const hero = document.getElementById('hero');
-    setTimeout(() => {
-        hero.classList.add('animate');
-    }, 500);
-    
-    // Check scroll position on load
-    checkScroll();
-    
-    // Update cart count
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    document.querySelector('.cart-count').textContent = cart.length;
-});
-
-// Check scroll on scroll event - use throttling for performance
+// Throttled scroll event
 let scrollTimeout;
 window.addEventListener('scroll', function() {
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(checkScroll, 10);
 });
 
-// Re-animate when page becomes visible again (for when navigating back)
-document.addEventListener('visibilitychange', function() {
-    if (!document.hidden) {
-        setTimeout(checkScroll, 100);
-    }
+// Re-animate on visibility/focus
+document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) setTimeout(checkScroll, 100);
 });
-
-// Re-animate when page is focused (for when navigating back)
-window.addEventListener('focus', function() {
+window.addEventListener('focus', () => {
     setTimeout(checkScroll, 100);
 });
 
-// Smooth scrolling
+
+// ========================
+// SMOOTH SCROLLING LINKS
+// ========================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
@@ -1408,59 +1419,53 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Auto-scroll for best sellers on mobile
+
+// ========================
+// AUTO-SCROLL BEST SELLERS (FIXED)
+// ========================
 function startAutoScroll() {
     const bestSellerItems = document.getElementById('bestSellerItems');
     if (!bestSellerItems) return;
-    
+
     let scrollPosition = 0;
-    const cardWidth = 280; // Width of each card + gap
-    const scrollSpeed = 0.5; // Pixels per frame
-    
+    let scrollSpeed = 0.5; // variable speed
+    let isPaused = false;
+
     function autoScroll() {
-        // Only auto-scroll on mobile screens
-        if (window.innerWidth >= 768) return;
-        
-        scrollPosition += scrollSpeed;
-        
-        // Reset position when reaching the end
+        if (window.innerWidth >= 768 || isPaused) {
+            requestAnimationFrame(autoScroll);
+            return;
+        }
+
+        scrollPosition = bestSellerItems.scrollLeft + scrollSpeed;
+
+        // Loop back when reaching end
         if (scrollPosition >= bestSellerItems.scrollWidth - bestSellerItems.clientWidth) {
             scrollPosition = 0;
         }
-        
+
         bestSellerItems.scrollLeft = scrollPosition;
         requestAnimationFrame(autoScroll);
     }
-    
-    // Start auto-scroll
+
     requestAnimationFrame(autoScroll);
-    
-    // Pause auto-scroll on hover/touch
-    bestSellerItems.addEventListener('mouseenter', function() {
-        scrollSpeed = 0;
+
+    // Pause on hover (desktop)
+    bestSellerItems.addEventListener('mouseenter', () => isPaused = true);
+    bestSellerItems.addEventListener('mouseleave', () => isPaused = false);
+
+    // Pause on touch (mobile)
+    bestSellerItems.addEventListener('touchstart', () => isPaused = true);
+    bestSellerItems.addEventListener('touchend', () => {
+        setTimeout(() => { isPaused = false; }, 2000);
     });
-    
-    bestSellerItems.addEventListener('mouseleave', function() {
-        scrollSpeed = 0.5;
-    });
-    
-    // Touch events for mobile
-    let isTouching = false;
-    
-    bestSellerItems.addEventListener('touchstart', function() {
-        isTouching = true;
-        scrollSpeed = 0;
-    });
-    
-    bestSellerItems.addEventListener('touchend', function() {
-        isTouching = false;
-        setTimeout(() => {
-            if (!isTouching) {
-                scrollSpeed = 0.5;
-            }
-        }, 2000); // Resume after 2 seconds
+
+    // Update scroll position when user manually scrolls
+    bestSellerItems.addEventListener('scroll', () => {
+        scrollPosition = bestSellerItems.scrollLeft;
     });
 }
+
     </script>
 </body>
 </html>
